@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: Event Management App
+    env: node
+    region: oregon # or your preferred region (e.g., frankfurt, singapore)
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false # or reference a secret if using Render DB
+      # Add other required env vars below, e.g.:
+      # - key: JWT_SECRET
+      #   generateValue: true
